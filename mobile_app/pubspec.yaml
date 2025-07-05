@@ -1,1 +1,21 @@
+```yaml
+name: road_aid_ai
+version: 1.0.0+1
+description: A Flutter app to report road accidents.
 
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^2.0.0
+  cloud_firestore: ^4.0.0
+  location: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/images/
+```
