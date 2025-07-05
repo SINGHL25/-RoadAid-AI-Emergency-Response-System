@@ -58,4 +58,27 @@ class _ReportFormState extends State<ReportForm> {
     );
   }
 }
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+ElevatedButton(
+  child: Text('Submit'),
+  onPressed: () async {
+    await FirebaseFirestore.instance.collection('incidents').add({
+      'type': _incidentType,
+      'location': _locationController.text,
+      'timestamp': DateTime.now().toIso8601String(),
+    });
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ConfirmationPage(
+          incidentType: _incidentType,
+          location: _locationController.text,
+        ),
+      ),
+    );
+  },
+)
 ```
