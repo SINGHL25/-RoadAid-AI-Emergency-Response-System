@@ -1,0 +1,10 @@
+fastapi
+firebase-admin
+streamlit
+opencv-python
+tensorflow
+torch
+yolov8
+pytesseract
+requests
+python-multipart
