@@ -18,5 +18,32 @@ def read_root():
 def report_incident(incident: Incident):
     print(f"New incident at {incident.location}: {incident.description}")
     return {"status": "success", "timestamp": datetime.datetime.now().isoformat()}
+
+
+
+```python
+from fastapi import FastAPI, Request
+from firebase_config import db
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/")
+def index():
+    return {"msg": "RoadAid API live"}
+
+@app.post("/submit")
+def submit_report(data: dict):
+    db.collection('incidents').add(data)
+    return {"status": "Saved"}
+```
 ```
 
