@@ -1,1 +1,7 @@
-
+```json
+{
+  "location": "23.456, 77.123",
+  "description": "Bike skidded near turn",
+  "time": "2025-07-04T10:00:00Z"
+}
+```
