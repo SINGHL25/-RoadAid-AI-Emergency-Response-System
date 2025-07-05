@@ -8,3 +8,27 @@ yolov8
 pytesseract
 requests
 python-multipart
+
+
+---
+
+## ✅ Firebase Integration in Flutter
+
+### 1. 🔥 Firebase Setup
+- Go to [Firebase Console](https://console.firebase.google.com/)
+- Create a new project: `roadaid-ai`
+- Add Android and iOS apps
+- Download `google-services.json` for Android → place it in `android/app/`
+- Enable Firestore Database and Authentication (Email/Password or Anonymous)
+
+### 2. 🔐 Firebase Auth Setup (Optional)
+```dart
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(RoadAidApp());
+}
+```
